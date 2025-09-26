@@ -81,6 +81,9 @@ async def main():
     
     score = await evaluate(graph=graph,dataset=dataset_val,num_rounds=args.num_rounds,limit_questions=limit_questions,eval_batch_size=args.batch_size)
     print(f"Score: {score}")
+    print(f"Total experiment cost: ${Cost.instance().value}")  
+    print(f"Total prompt tokens used: {PromptTokens.instance().value}")  
+    print(f"Total completion tokens used: {CompletionTokens.instance().value}")
 
 
 
