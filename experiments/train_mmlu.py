@@ -79,6 +79,10 @@ async def train(graph:Graph,
         print(f"Batch time {time.time() - start_ts:.3f}")
         print("utilities:", utilities) # [0.0, 0.0, 0.0, 1.0]
         
+        from AgentPrune.utils.globals import PromptTokens, CompletionTokens  
+        print(f"Batch {i_iter} - Prompt Tokens: {PromptTokens.instance().value}")  
+        print(f"Batch {i_iter} - Completion Tokens: {CompletionTokens.instance().value}")
+        
         if (i_iter+1)%imp_per_iters == 0:
             spatial_masks, temporal_masks = graph.update_masks(pruning_rate)
         

@@ -13,6 +13,7 @@ from dataset.MMLU.download import download
 from experiments.train_mmlu import train
 from experiments.evaluate_mmlu import evaluate
 from AgentPrune.utils.const import AgentPrune_ROOT
+from AgentPrune.utils.globals import Cost, PromptTokens, CompletionTokens
 
 
 
